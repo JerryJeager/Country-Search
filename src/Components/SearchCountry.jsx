@@ -6,6 +6,7 @@ import CountryCards from "./CountryCards"
 const SearchCountry = () => {
     
     const [searchValue, setSearchValue] = useState('')
+    const [region, setRegion] = useState('')
     const navigate = useNavigate()
 
   return (
@@ -17,8 +18,8 @@ const SearchCountry = () => {
             </div>
             <div className="mt-6 md:mt-0 px-4 py-2 dark:bg-dark-blue bg-white rounded-md flex items-center w-[170px]">
                 <select name="filter" id="items" onChange={(e) => {
-                    setSearchValue(e.target.value)
-                    navigate.push('Regions')
+                    setRegion(e.target.value)
+                    // navigate.push('/Regions')
                     }} 
                     className="dark:bg-dark-blue bg-white outline-none dark:text-white w-[100%]">
                     <option value="" disabled selected className="hidden">Filter by Region</option>
@@ -30,7 +31,7 @@ const SearchCountry = () => {
                 </select>
             </div>
         </form>
-        <CountryCards />
+        <CountryCards region={region} />
     </div>
   )
 }
