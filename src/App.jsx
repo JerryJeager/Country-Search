@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import CountryCards from './Components/CountryCards'
+import Regions from './Components/Regions'
+import SearchCountry from './Components/SearchCountry'
 import Header from './Header'
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <BrowserRouter>
       <Header/>
       <Routes>
-        <Route path='/' element={ <CountryCards/> } />
+        <Route path='/' element={ <SearchCountry /> } />
+        <Route path='/Regions' element={ <Regions /> } />
       </Routes>
     </BrowserRouter>
   )
