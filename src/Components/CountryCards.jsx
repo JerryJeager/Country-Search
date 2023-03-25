@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
 
 const CountryCards = ({region}) => {
+
+    const navigate = useNavigate()
 
     const [countryData, setCountryData] = useState(null)
 
@@ -34,7 +37,7 @@ const CountryCards = ({region}) => {
         </div>
         }
         {countryData && countryData.map((country) => (
-            <div key={country.name.common} className="w-[100%] rounded-md dark:bg-dark-blue bg-white hover:shadow-lg">
+            <div key={country.name.common} className="w-[100%] rounded-md dark:bg-dark-blue bg-white hover:shadow-lg" onClick={() => navigate(`/CountryDetails/${country.name.common}`)}>
                 <img src={country.flags.svg} alt="" className="rounded-t-md h-[170px] w-[100%] m-0" />
                 <div className="mt-6 px-6 pb-12 text-very-dark-blue-light dark:text-white">
                     <h2 className="text-lg font-bold">{country.name.common}</h2>
