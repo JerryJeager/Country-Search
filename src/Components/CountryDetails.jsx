@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Navigate } from 'react-router-dom'
+import { useParams, useNavigate, Navigate, Link } from 'react-router-dom'
 
 
 
@@ -37,8 +37,8 @@ const CountryDetails = () => {
            </button>
         </div>}
         {countryData && <div >
-            <button className="text-very-dark-blue-light dark:text-white p-4 rounded-sm text-center mt-4 bg-white dark:bg-dark-blue" onClick={() => navigate('/')}><i class="fa-solid fa-arrow-left"></i> Back</button>
-        <div className="flex flex-col md:flex-row justify-between mt-6">
+            <Link to='/'><button className="text-very-dark-blue-light dark:text-white p-4 rounded-sm text-center mt-4 bg-white dark:bg-dark-blue"><i class="fa-solid fa-arrow-left"></i> Back</button></Link>       
+ <div className="flex flex-col md:flex-row justify-between mt-6">
             <div>
                 <img src={countryData[0].flags.svg} alt=""  className="h-[170px] pb-6 lg:h-[340px] w-[440px]"/>
             </div>
